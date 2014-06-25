@@ -145,28 +145,31 @@ static const int GRID_COLUMNS = 10;
 
 -(void)updateCreatures
 {
-// int numAlive == 0
+    // note that NSArray has a method 'count' that will return the number of elements in the array
+    for (int i = 0; i < [_gridArray count]; i++)
+    {
+        // iterate through all the columns for a given row
+        for (int j = 0; j < [_gridArray[i] count]; j++)
+        {
+            // access the creature in the cell that corresponds to the current row/column
+            Creature *currentCreature = _gridArray[i][j];}
     
-//    
-//    
-//
-//
-//    if(currentCreature.livingNeighbors == 3)
-//    {
-//    currentCreature.isAlive = TRUE
-//    }
-//    else if (currentCreature.livingNeighbors <= 3)
-//    {
-//    currentCreature.isALive = FALSE
-//    }
-//    else if (currentCreature.livingNeighbors >= 4)
-//    {
-//    currentCreature.isALive = FALSE
-//    }
-//    _totalAlive = numAlive;
-}
+    
+    if (currentCreature.livingNeighbors == 3)
+    {
+        currentCreature.isAlive = TRUE;
+    }
+    else if (currentCreature.livingNeighbors <= 1)
+    {
+        currentCreature.isALive = FALSE;
+    }
+    else if (currentCreature.livingNeighbors >= 4)
+    {
+        currentCreature.isALive = FALSE;
+    }
+        }
 
-
+    }
 
 
 @end
