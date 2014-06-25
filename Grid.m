@@ -152,24 +152,25 @@ static const int GRID_COLUMNS = 10;
         for (int j = 0; j < [_gridArray[i] count]; j++)
         {
             // access the creature in the cell that corresponds to the current row/column
-            Creature *currentCreature = _gridArray[i][j];}
+            Creature *currentCreature = _gridArray[i][j];
     
     
-    if (currentCreature.livingNeighbors == 3)
-    {
-        currentCreature.isAlive = TRUE;
-    }
-    else if (currentCreature.livingNeighbors <= 1)
-    {
-        currentCreature.isALive = FALSE;
-    }
-    else if (currentCreature.livingNeighbors >= 4)
-    {
-        currentCreature.isALive = FALSE;
-    }
+                if (currentCreature.livingNeighbors == 3)
+                {
+                    currentCreature.isAlive = TRUE;
+                }
+                else if (currentCreature.livingNeighbors <= 1)
+                {
+                    currentCreature.isAlive = FALSE;
+                }
+                else if (currentCreature.livingNeighbors >= 4)
+                {
+                    currentCreature.isAlive = FALSE;
+                }
+            
         }
 
     }
 
-
+}
 @end
